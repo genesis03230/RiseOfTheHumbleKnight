@@ -14,7 +14,7 @@ TagManager:
   - Player
   - Ground
   - Ignore
-  - Items
+  - Npc
   - 
   - 
   - 
@@ -53,6 +53,6 @@ TagManager:
   - name: Ground
     uniqueID: 976802441
     locked: 0
-  - name: Items
+  - name: Npc
     uniqueID: 797593109
     locked: 0
