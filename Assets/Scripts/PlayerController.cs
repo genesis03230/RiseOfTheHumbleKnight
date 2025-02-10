@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -23,7 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float checkNpcDistance;
     [SerializeField] private bool isNpcDetected;
     [SerializeField] private LayerMask npcLayer;
-    [SerializeField] private bool isDialogueActive;
+    [SerializeField] private bool isDialogueActive = false;
+    private GameObject currentNpc;
 
 
     private void Awake()
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        if (isDialogueActive) return;
         Vector2 input = m_gatherInput.Value;
         m_rigidbody2D.velocity = input * speed;
 
@@ -85,7 +88,17 @@ public class PlayerController : MonoBehaviour
 
     private void HandleNpc()
     {
-        isNpcDetected = Physics2D.Raycast(m_transform.position, Vector2.right * direction, checkNpcDistance, npcLayer);
+        RaycastHit2D hit = Physics2D.Raycast(m_transform.position, Vector2.right * direction, checkNpcDistance, npcLayer);
+        if (hit.collider != null)
+        {
+            isNpcDetected = true;
+            currentNpc = hit.collider.gameObject; // Guarda el NPC detectado
+        }
+        else
+        {
+            isNpcDetected = false;
+            currentNpc = null;
+        }
     }
 
     private void OnDrawGizmos()
@@ -95,11 +108,26 @@ public class PlayerController : MonoBehaviour
 
     private void HandleInput()
     {
-        // Verifica si la acción fue presionada y si hay un NPC detectado
-        if (m_gatherInput.IsAction && isNpcDetected)
+        if (m_gatherInput.IsAction && isNpcDetected && !isDialogueActive)
         {
-            Debug.Log("Interacción con el NPC detectado");
+            StartDialogue();
         }
+    }
+
+    private void StartDialogue()
+    {
+        if (currentNpc != null)
+        {
+            isDialogueActive = true;
+            string npcName = currentNpc.name; // Obtiene el nombre del NPC
+            DialogScript.Instance.StartDialogue(npcName); // Llama al sistema de diálogo con el NPC específico
+        }
+    }
+
+    public void EndDialogue()
+    {
+        isDialogueActive = false;
+        currentNpc = null;
     }
 
 }
