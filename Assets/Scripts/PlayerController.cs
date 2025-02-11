@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,7 +27,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask npcLayer;
     [SerializeField] private bool isDialogueActive = false;
     private GameObject currentNpc;
-
 
     private void Awake()
     {
@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
     private void HandleNpc()
     {
         RaycastHit2D hit = Physics2D.Raycast(m_transform.position, Vector2.right * direction, checkNpcDistance, npcLayer);
+
         if (hit.collider != null)
         {
             isNpcDetected = true;
@@ -120,7 +121,22 @@ public class PlayerController : MonoBehaviour
         {
             isDialogueActive = true;
             string npcName = currentNpc.name; // Obtiene el nombre del NPC
-            DialogScript.Instance.StartDialogue(npcName); // Llama al sistema de diálogo con el NPC específico
+            string currentScene = SceneManager.GetActiveScene().name;
+
+            // Verifica la escena actual y llama al script correspondiente
+            if (currentScene == "VillageScene")
+            {
+                DialogScriptVillage.Instance?.StartDialogue(npcName);
+            }
+            else if (currentScene == "TavernScene")
+            {
+                DialogScriptTavern.Instance?.StartDialogue(npcName);
+            }
+            else
+            {
+                Debug.LogWarning("No hay script de diálogo para esta escena.");
+            }
+         
         }
     }
 

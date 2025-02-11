@@ -38,21 +38,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 3057509057
     locked: 0
-  - name: MiddleGround
-    uniqueID: 3794272093
+  - name: Decoration
+    uniqueID: 195918171
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 159149929
     locked: 0
+  - name: Npc
+    uniqueID: 797593109
+    locked: 0
+  - name: Ground2
+    uniqueID: 34879693
+    locked: 0
   - name: Ground
     uniqueID: 976802441
     locked: 0
-  - name: Npc
-    uniqueID: 797593109
+  - name: Background2
+    uniqueID: 3794272093
     locked: 0
