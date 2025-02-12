@@ -87,7 +87,7 @@ public class DialogScriptVillage : MonoBehaviour
 
     private IEnumerator WaitForNewAction()
     {
-        yield return new WaitForSeconds(0.5f); //Esperar para que el Raycast no detecte enseguida el dialogo nuevamente
+        yield return new WaitForSeconds(0.2f); //Esperar para que el Raycast no detecte enseguida el dialogo nuevamente
 
         patrolCharacter.ResumePatrol();
 

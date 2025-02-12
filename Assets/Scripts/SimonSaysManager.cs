@@ -1,9 +1,19 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using Doublsb.Dialog;
 
 public class SimonSaysGame : MonoBehaviour
 {
+    [SerializeField] private DialogScriptDungeon dialogScriptDungeon;
+    public DialogManager dialogManager;
+    public GameObject npcMagicianDialogue;
+    public GameObject printer;
+    public GameObject canvas;
+   
+
     public List<GameObject> botones; // Lista de botones/runas
     public int maxAciertos = 5;
     public AudioClip[] sonidosRunas; // Clips de audio para cada runa
@@ -14,9 +24,62 @@ public class SimonSaysGame : MonoBehaviour
     private List<int> secuencia = new List<int>();
     private int indexJugador = 0;
 
+
+    private void Awake()
+    {
+        // Obtener el componente si no se ha asignado desde el Inspector
+        if (dialogScriptDungeon == null)
+        {
+            dialogScriptDungeon = GetComponent<DialogScriptDungeon>();
+        }
+
+        if (dialogScriptDungeon == null)
+        {
+            Debug.LogError("dialogScriptDungeon no encontrado.");
+        }
+    }
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+
+    public void ShowTextRandomDefeat()
+    {
+        var dialogTexts = new List<DialogData>
+        {
+        new DialogData("/emote:Normal/HAS FALLADO!!", "NpcMagicianDialogue"),
+        new DialogData("/emote:Happy/¡Jejeje! Si esto fuera un juego de memoria, estarías perdiendo... Ah, espera, lo es.", "NpcMagicianDialogue"),
+        new DialogData("/emote:Serious/Parece que no tienes suerte, ¿eh?", "NpcMagicianDialogue"),
+        new DialogData("/emote:Surprised/Esto es doloroso... ¿No aprenderás nunca?", "NpcMagicianDialogue")
+        };
+
+        // Selección aleatoria del diálogo
+        int index = Random.Range(0, dialogTexts.Count);
+
+        // Mostrar el diálogo aleatorio
+        dialogManager.Show(new List<DialogData> { dialogTexts[index] });
+    }
+
+    public void ShowTextRandomVictory()
+    {
+        var dialogTexts = new List<DialogData>
+        {
+        new DialogData("/emote:Surprised/¡Increíble! ¡Parece que tienes más talento de lo que pensaba!", "NpcMagicianDialogue"),
+        new DialogData("/emote:Happy/¡Lo has hecho! ¡Impresionante! Me has dejado sin palabras.", "NpcMagicianDialogue"),
+        new DialogData("/emote:Surprised/¡Felicidades! Parece que eres un genio, o simplemente muy afortunado.", "NpcMagicianDialogue"),
+        new DialogData("/emote:Happy/¡Qué bien jugado! Te felicito, has superado mi desafío. ¡Estás a otro nivel!", "NpcMagicianDialogue")
+        };
+
+        // Selección aleatoria del diálogo
+        int index = Random.Range(0, dialogTexts.Count);
+
+        // Mostrar el diálogo aleatorio
+        dialogManager.Show(new List<DialogData> { dialogTexts[index] });
+    }
+
+    public void SimonsSaysPlay()
+    {
         GenerarNuevaSecuencia();
     }
 
@@ -34,6 +97,10 @@ public class SimonSaysGame : MonoBehaviour
                     if (secuencia.Count >= maxAciertos)
                     {
                         Debug.Log("¡Ganaste el juego!");
+                        printer.SetActive(true);
+                        npcMagicianDialogue.SetActive(true);
+                        ShowTextRandomVictory();
+                        StartCoroutine(VictoryText());
                         return;
                     }
 
@@ -44,9 +111,43 @@ public class SimonSaysGame : MonoBehaviour
             else
             {
                 Debug.Log("Secuencia incorrecta. Reiniciando...");
-                ReiniciarJuego();
+                printer.SetActive(true);
+                npcMagicianDialogue.SetActive(true);
+
+                ShowTextRandomDefeat();
+                StartCoroutine(DefeatText());
             }
         }
+    }
+
+    private IEnumerator VictoryText()
+    {
+        while (dialogManager.state != State.Deactivate)
+        {
+            yield return null;
+        }
+
+        printer.SetActive(false);
+        npcMagicianDialogue.SetActive(false);
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        dialogScriptDungeon.isFirstDialogue = false;
+        dialogScriptDungeon.isSecondDialogue = true;
+      
+        dialogScriptDungeon.isSecondDialogue = true;
+        canvas.SetActive(false);
+    }
+
+    private IEnumerator DefeatText()
+    {
+        while (dialogManager.state != State.Deactivate)
+        {
+            yield return null;
+        }
+
+        printer.SetActive(false);
+        npcMagicianDialogue.SetActive(false);
+        ReiniciarJuego();
     }
 
     void GenerarNuevaSecuencia()

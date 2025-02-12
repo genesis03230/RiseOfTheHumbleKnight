@@ -71,8 +71,18 @@ public class DialogScriptTavern : MonoBehaviour
         npcBanditDialogue.SetActive(false);
 
         isDialogueActive = false;
+
+        StartCoroutine(WaitForNewAction());
     }
-  
+
+    private IEnumerator WaitForNewAction()
+    {
+        yield return new WaitForSeconds(0.2f); //Esperar para que el Raycast no detecte enseguida el dialogo nuevamente
+
+        //Notifica al PlayerController que ya puede interactuar de nuevo
+        FindObjectOfType<PlayerController>().EndDialogue();
+    }
+
 
     private void TextNpcBandit()
     {
@@ -124,7 +134,7 @@ public class DialogScriptTavern : MonoBehaviour
 
         dialogTexts.Add(new DialogData("/emote:Serious/Me llaman el bandido de las colinas, pero muchos me conocen como...", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Happy/ \"KAUFMAN\"", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Happy//color:green/\"KAUFMAN\"", "NpcBanditDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Tavern/Hasta luego, Kaufman.", "PlayerDialogue"));
 
