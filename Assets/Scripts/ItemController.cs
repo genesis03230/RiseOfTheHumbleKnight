@@ -8,6 +8,7 @@ public class ItemController : MonoBehaviour
     [SerializeField] private GameObject buttonASprite;
     [SerializeField] public GameObject particleEffect1;
     [SerializeField] public GameObject particleEffect2;
+    [SerializeField] public AudioSource audioSource;
     private bool isPlayerInRange;
     private Animator animator;
     private bool openChest;
@@ -32,6 +33,7 @@ public class ItemController : MonoBehaviour
         animator.SetBool("open", true);
         buttonASprite.SetActive(false);
         openChest = true;
+        audioSource.Stop();
         particleEffect1.SetActive(true);
         particleEffect2.SetActive(true);
         dialogScriptDungeon.isSecondDialogue = false;

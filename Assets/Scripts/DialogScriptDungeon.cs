@@ -18,6 +18,7 @@ public class DialogScriptDungeon : MonoBehaviour
     [SerializeField] private GameObject triggerMiniGame;
     [SerializeField] private GameObject triggerChest;
     [SerializeField] private GameObject trigger;
+    [SerializeField] private AudioSource audioSource;
     private bool isDialogueActive;
     public bool isFirstDialogue = true;
     public bool isSecondDialogue = false;
@@ -85,6 +86,7 @@ public class DialogScriptDungeon : MonoBehaviour
             switch (npcName)
             {
                 case "NpcMagician":
+                    audioSource.Play();
                     trigger.SetActive(true);
                     npcMagicianDialogue.SetActive(true);
                     ThirdTextNpcMagician();

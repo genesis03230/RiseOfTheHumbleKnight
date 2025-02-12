@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f4a13408d868d8c41882ffe2dd376b71
+  - enabled: 1
+    path: Assets/Scenes/Introduction.unity
+    guid: 4681e1008f7503540833ee0535443242
+  - enabled: 1
     path: Assets/Scenes/VillageScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -15,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/DungeonScene.unity
     guid: 05f2b4025d89f2a43a46e4f65789c2b4
   - enabled: 1
-    path: Assets/Scenes/FinalScene.unity
-    guid: 85993a26371bfff448646fce400bc047
+    path: Assets/Scenes/Outcome.unity
+    guid: 8621f86dce372b546bef8d608e63fa89
   m_configObjects: {}

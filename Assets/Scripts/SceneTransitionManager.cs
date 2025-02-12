@@ -33,6 +33,14 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void ChangeSceneWithFade(string sceneName)
     {
         if (fadeImage != null)
