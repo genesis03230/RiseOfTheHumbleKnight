@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private Animator m_animator;
     private ItemController itemController;
     private bool isSwitchingCharacter; //Evita multiples activaciones
+    public static bool isMiniGameActive = false;
+
 
     //ANIMATOR IDS
     private int idSpeed;
@@ -73,6 +75,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         if (isDialogueActive) return;
+        if (isMiniGameActive) return;
         Vector2 input = m_gatherInput.Value;
         m_rigidbody2D.velocity = input * speed;
 
@@ -200,6 +203,10 @@ public class PlayerController : MonoBehaviour
                 DialogScriptTavern.Instance?.StartDialogue(npcName);
             }
             else if (currentScene == "DungeonScene")
+            {
+                DialogScriptDungeon.Instance?.StartDialogue(npcName);
+            }
+            else if (currentScene == "FinalScene")
             {
                 DialogScriptDungeon.Instance?.StartDialogue(npcName);
             }

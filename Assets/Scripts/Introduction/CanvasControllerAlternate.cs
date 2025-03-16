@@ -2,6 +2,9 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UIElements;
+using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class CanvasControllerAlternate : MonoBehaviour
 {
@@ -23,8 +26,13 @@ public class CanvasControllerAlternate : MonoBehaviour
     private int currentImageIndex = 0;
     public float waitAfterText = 2f; // Tiempo de espera después de mostrar cada texto
 
+    public VideoPlayer videoPlayer;
+    public GameObject videoCanvas;
+
     void Start()
     {
+        videoCanvas.SetActive(false);
+
         if (background == null)
         {
             background = GameObject.Find("Background").GetComponent<RectTransform>(); // Buscar la imagen si no está asignada
@@ -66,8 +74,8 @@ public class CanvasControllerAlternate : MonoBehaviour
         // Una vez que terminan todas las imágenes, procedemos a hacer fade out al Canvas completo
         yield return StartCoroutine(FadeToBlack()); // Oscurecer la pantalla
 
-        // Después de la pantalla negra, mostrar el texto final "continuará"
-        yield return StartCoroutine(ShowFinalText("CONTINUARA"));
+        // Logica para después de la pantalla negra
+        PlayCredits();
     }
 
     private IEnumerator TypewriterEffect(TextMeshProUGUI text, string fullText, float delayBetweenLetters)
@@ -175,5 +183,19 @@ public class CanvasControllerAlternate : MonoBehaviour
 
         // Activar el texto final una vez se complete el fade in
         finalText.gameObject.SetActive(true);
+    }
+
+    public void PlayCredits()
+    {
+        videoCanvas.SetActive(true); // Mostrar el Canvas
+        videoPlayer.Play(); // Reproducir el video
+
+        // Suscribirse al evento cuando el video termine
+        videoPlayer.loopPointReached += OnVideoFinished;
+    }
+
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        SceneManager.LoadScene("PostCredits");
     }
 }

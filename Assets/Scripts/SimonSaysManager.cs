@@ -7,6 +7,8 @@ using Doublsb.Dialog;
 
 public class SimonSaysGame : MonoBehaviour
 {
+    public static PlayerController playerController;
+
     [SerializeField] private DialogScriptDungeon dialogScriptDungeon;
     public DialogManager dialogManager;
     public GameObject npcMagicianDialogue;
@@ -48,10 +50,10 @@ public class SimonSaysGame : MonoBehaviour
     {
         var dialogTexts = new List<DialogData>
         {
-        new DialogData("/emote:Normal/HAS FALLADO!!", "NpcMagicianDialogue"),
-        new DialogData("/emote:Happy/¡Jejeje! Si esto fuera un juego de memoria, estarías perdiendo... Ah, espera, lo es.", "NpcMagicianDialogue"),
-        new DialogData("/emote:Serious/Parece que no tienes suerte, ¿eh?", "NpcMagicianDialogue"),
-        new DialogData("/emote:Surprised/Esto es doloroso... ¿No aprenderás nunca?", "NpcMagicianDialogue")
+        new DialogData("/emote:Normal//sound:Oh/HAS FALLADO!!", "NpcMagicianDialogue"),
+        new DialogData("/emote:Happy//sound:Jajaja/¡Jejeje! Si esto fuera un juego de memoria, estarías perdiendo... Ah, espera, lo es.", "NpcMagicianDialogue"),
+        new DialogData("/emote:Serious//sound:Cofcof/Parece que no tienes suerte, ¿eh?", "NpcMagicianDialogue"),
+        new DialogData("/emote:Surprised//sound:Hemhem/Esto es doloroso... ¿No aprenderás nunca?", "NpcMagicianDialogue")
         };
 
         // Selección aleatoria del diálogo
@@ -65,10 +67,10 @@ public class SimonSaysGame : MonoBehaviour
     {
         var dialogTexts = new List<DialogData>
         {
-        new DialogData("/emote:Surprised/¡Increíble! ¡Parece que tienes más talento de lo que pensaba!", "NpcMagicianDialogue"),
-        new DialogData("/emote:Happy/¡Lo has hecho! ¡Impresionante! Me has dejado sin palabras.", "NpcMagicianDialogue"),
-        new DialogData("/emote:Surprised/¡Felicidades! Parece que eres un genio, o simplemente muy afortunado.", "NpcMagicianDialogue"),
-        new DialogData("/emote:Happy/¡Qué bien jugado! Te felicito, has superado mi desafío. ¡Estás a otro nivel!", "NpcMagicianDialogue")
+        new DialogData("/emote:Surprised//sound:Ouu/¡Increíble! ¡Parece que tienes más talento de lo que pensaba!", "NpcMagicianDialogue"),
+        new DialogData("/emote:Happy//sound:JAJA/¡Lo has hecho! ¡Impresionante! Me has dejado sin palabras.", "NpcMagicianDialogue"),
+        new DialogData("/emote:Surprised//sound:Ouu/¡Felicidades! Parece que eres un genio, o simplemente muy afortunado.", "NpcMagicianDialogue"),
+        new DialogData("/emote:Happy//sound:JAJA/¡Qué bien jugado! Te felicito, has superado mi desafío. ¡Estás a otro nivel!", "NpcMagicianDialogue")
         };
 
         // Selección aleatoria del diálogo
@@ -135,6 +137,7 @@ public class SimonSaysGame : MonoBehaviour
         dialogScriptDungeon.isSecondDialogue = true;
       
         dialogScriptDungeon.isSecondDialogue = true;
+        PlayerController.isMiniGameActive = false;
         canvas.SetActive(false);
     }
 

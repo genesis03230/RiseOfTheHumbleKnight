@@ -18,6 +18,8 @@ public class DialogScriptVillage : MonoBehaviour
     [SerializeField] private GameObject npcWomenDialogue;
     [SerializeField] private GameObject printer;
     [SerializeField] private GameObject trigger;
+    [SerializeField] private GameObject door_Close;
+    [SerializeField] private GameObject door_Open;
     private bool isDialogueActive;
 
     private void Awake()
@@ -53,6 +55,8 @@ public class DialogScriptVillage : MonoBehaviour
 
             case "NpcWomen":
                 trigger.SetActive(true);
+                door_Close.SetActive(false);
+                door_Open.SetActive(true);
                 npcWomenDialogue.SetActive(true);
                 TextNpcWomen();
                 break;
@@ -99,9 +103,9 @@ public class DialogScriptVillage : MonoBehaviour
     {
         var dialogTexts = new List<DialogData>();
 
-        dialogTexts.Add(new DialogData("/emote:Village/Hola, pequeño. ¿Sabes algo sobre la bestia que ronda por aquí?", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Village//sound:Hi/Hola, pequeño. ¿Sabes algo sobre la bestia que ronda por aquí?", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("Lo siento, señor... no sé nada sobre eso.", "NpcBoyDialogue"));
+        dialogTexts.Add(new DialogData("/sound:Sorry/Lo siento, señor... no sé nada sobre eso.", "NpcBoyDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Village/No te preocupes. Gracias de todos modos.", "PlayerDialogue"));
 
@@ -117,23 +121,23 @@ public class DialogScriptVillage : MonoBehaviour
     {
         var dialogTexts = new List<DialogData>();
 
-        dialogTexts.Add(new DialogData("¡Oh! Qué sorpresa ver a un forastero por aquí. ¿Qué te trae a nuestra humilde aldea?", "NpcWomenDialogue"));
+        dialogTexts.Add(new DialogData("/sound:Hey/¡Oh! Qué sorpresa ver a un forastero por aquí. ¿Qué te trae a nuestra humilde aldea?", "NpcWomenDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Village/He escuchado rumores sobre una bestia que ronda esta zona. Necesito información para encontrarla y ponerle fin a su amenaza.", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Village//sound:Hey/Hola! He escuchado rumores sobre una bestia que ronda esta zona. Necesito información para encontrarla y ponerle fin a su amenaza.", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("La bestia... ¡Nadie se atreve a hablar de ella! Ya ha destruido campos y ahuyentado a nuestros animales.", "NpcWomenDialogue"));
+        dialogTexts.Add(new DialogData("/sound:Hum/La bestia... ¡Nadie se atreve a hablar de ella! Ya ha destruido campos y ahuyentado a nuestros animales.", "NpcWomenDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Village/Entonces necesito saber dónde encontrar a alguien que hable sin miedo. ¿Algún cazador en la aldea, quizás?", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("No exactamente, pero si te diriges a la taberna, aquí cerca, encontrarás a los bandidos que siempre merodean por allí.", "NpcWomenDialogue"));
+        dialogTexts.Add(new DialogData("/sound:sorry/No exactamente, pero si te diriges a la taberna, aquí cerca, encontrarás a los bandidos que siempre merodean por allí.", "NpcWomenDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Village/¿Bandidos?", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Village//sound:What/¿Bandidos?", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("¡Sí! No siempre son amables, pero saben cosas que nadie más se atreve a contar. Puede que tengan la información que buscas... si tienes algo con qué negociar, claro.", "NpcWomenDialogue"));
+        dialogTexts.Add(new DialogData("/sound:Yes/¡Sí! No siempre son amables, pero saben cosas que nadie más se atreve a contar. Puede que tengan la información que buscas... si tienes algo con qué negociar, claro.", "NpcWomenDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Village/Gracias, ha sido muy amable. Eso me basta para empezar.", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Village//sound:Okey/Gracias, ha sido muy amable. Eso me basta para empezar.", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("Buena suerte, viajero. Y cuidado con los bandidos, a veces la bestia no es lo más peligroso en esta aldea.", "NpcWomenDialogue"));
+        dialogTexts.Add(new DialogData("/sound:GoodLuck/Buena suerte, viajero. Y cuidado con los bandidos, a veces la bestia no es lo más peligroso en esta aldea.", "NpcWomenDialogue"));
 
         dialogManager.Show(dialogTexts);
 

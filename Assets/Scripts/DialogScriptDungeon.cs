@@ -18,7 +18,6 @@ public class DialogScriptDungeon : MonoBehaviour
     [SerializeField] private GameObject triggerMiniGame;
     [SerializeField] private GameObject triggerChest;
     [SerializeField] private GameObject trigger;
-    [SerializeField] private AudioSource audioSource;
     private bool isDialogueActive;
     public bool isFirstDialogue = true;
     public bool isSecondDialogue = false;
@@ -86,7 +85,6 @@ public class DialogScriptDungeon : MonoBehaviour
             switch (npcName)
             {
                 case "NpcMagician":
-                    audioSource.Play();
                     trigger.SetActive(true);
                     npcMagicianDialogue.SetActive(true);
                     ThirdTextNpcMagician();
@@ -126,35 +124,35 @@ public class DialogScriptDungeon : MonoBehaviour
     {
         var dialogTexts = new List<DialogData>();
 
-        dialogTexts.Add(new DialogData("/emote:Surprised/Ah, un intrépido aventurero que ha caído en mi trampa... O tal vez no tan intrépido, después de todo.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised//sound:Greetings/Ah, un intrépido aventurero que ha caído en mi trampa... O tal vez no tan intrépido, después de todo.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Dungeon/Tu eres el mago de las Mazmorras?.", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Dungeon//sound:Hey/Tu eres el mago de las Mazmorras?.", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Happy/Asi es! Soy el mago /color:green/BELLBRACK", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Happy//sound:Yes/Asi es! Soy el mago /color:green/BELLBRACK", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Surprised/¿Has venido por el poder del orbe?", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised//sound:Oh/¿Has venido por el poder del orbe?", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Dungeon/He escuchado sobre tu orbe mágico... ", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Dungeon//sound:Yeah/He escuchado sobre tu orbe mágico... ", "PlayerDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Dungeon/y sé que sólo tú puedes darme el poder que necesito para salvar a mi amada de la bestia.", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Serious/La ¿BESTIA?, seguro te refieres al...", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Haaa/La ¿BESTIA?, seguro te refieres al...", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Normal//color:red/DRAGON NEGRO DE LA MONTAÑAS", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Normal//color:red/DRAGON NEGRO DE LAS MONTAÑAS", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Happy/Muy bien, te daré el orbe, pero primero deberás demostrar tu valía.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Happy//sound:Great/Muy bien, te daré el orbe, pero primero deberás demostrar tu valía.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Dungeon/Estoy listo. No importa lo que deba hacer, lo lograré.", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Dungeon//sound:Ready/Estoy listo. No importa lo que deba hacer, lo lograré.", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Serious/Mira esas runas en la pared. Allí donde la luz roja brilla, ese es el comienzo de nuestro juego.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Oh/Mira esas runas en la pared. Allí donde la luz roja brilla, ese es el comienzo de nuestro juego.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Dungeon/Las runas... ¿Qué tengo que hacer exactamente?", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Dungeon//sound:What/Las runas... ¿Qué tengo que hacer exactamente?", "PlayerDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Serious/Si logras completar mi desafío, el poder será tuyo.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Normal/Si fallas...", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Normal//sound:Haaa/Si fallas...", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Happy/Bueno, no será tan fácil. HA HA HA!!", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Happy/Bueno, no será tan fácil. /sound:Jajaja/HA HA HA!!", "NpcMagicianDialogue"));
 
         dialogManager.Show(dialogTexts);
 
@@ -167,13 +165,13 @@ public class DialogScriptDungeon : MonoBehaviour
     {
         var dialogTexts = new List<DialogData>();
 
-        dialogTexts.Add(new DialogData("/emote:Surprised/No esperaba que alguien tan audaz pudiese superar mi prueba.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised//sound:Great/No esperaba que alguien tan audaz pudiese superar mi prueba.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Serious/Ahora, como prometí, el poder está a tu alcance.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Haaa/Ahora, como prometí, el poder está a tu alcance.", "NpcMagicianDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Serious/El orbe está dentro de ese cofre.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Surprised/Ábrelo y sentirás cómo la magia fluye a través de ti.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised//sound:Oh/Ábrelo y sentirás cómo la magia fluye a través de ti.", "NpcMagicianDialogue"));
 
         dialogManager.Show(dialogTexts);
 
@@ -185,31 +183,31 @@ public class DialogScriptDungeon : MonoBehaviour
     {
         var dialogTexts = new List<DialogData>();
 
-        dialogTexts.Add(new DialogData("/emote:Normal/Ahora que has obtenido el poder del orbe, hay algo más que debo revelarte", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised//sound:Ohhh/Ahora que has obtenido el poder del orbe, hay algo más que debo revelarte", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Happy/Joven caballero!", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Happy//sound:JAJA/Joven caballero!", "NpcMagicianDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Serious/Aquí, en lo profundo de estas mazmorras, hay un camino secreto.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Dungeon/Esta mazmorras está llena de sorpresas.", "PlayerKnightDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Dungeon//sound:What/Esta mazmorra está llena de sorpresas.", "PlayerKnightDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Surprised/Este atajo te llevará directamente a las montañas.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised//sound:Oh/Este atajo te llevará directamente a las montañas.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Surprised/Donde aguarda el /color:red/DRAGON NEGRO.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised/Donde aguarda el /color:red//emote:Serious/DRAGON NEGRO.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Dungeon/Si este pasaje me lleva más cerca de las montañas, lo tomaré.", "PlayerKnightDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Dungeon//sound:Okey/Si este pasaje me lleva más cerca de las montañas, lo tomaré.", "PlayerKnightDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Normal/No dejes que la oscuridad te detenga.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised//sound:Ohhh/No dejes que la oscuridad te detenga.", "NpcMagicianDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Normal/Tu misión es clara.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Serious/El destino de tu amada está en tus manos.", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Haaa/El destino de tu amada está en tus manos.", "NpcMagicianDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Dungeon/Gracias, mago. Ahora sé que mi destino me espera.", "PlayerKnightDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Dungeon//sound:Yes/Gracias, mago. Ahora sé que mi destino me espera.", "PlayerKnightDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Dungeon/La oscuridad no me detendrá, ni el dragón, ni nada.", "PlayerKnightDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Dungeon//sound:Onmyway/La oscuridad no me detendrá, ni el dragón, ni nada.", "PlayerKnightDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Happy/Adelante, humilde caballero!!!", "NpcMagicianDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Happy//sound:JAJA/Adelante, humilde caballero!!!", "NpcMagicianDialogue"));
 
 
         dialogManager.Show(dialogTexts);

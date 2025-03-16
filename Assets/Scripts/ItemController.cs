@@ -8,7 +8,8 @@ public class ItemController : MonoBehaviour
     [SerializeField] private GameObject buttonASprite;
     [SerializeField] public GameObject particleEffect1;
     [SerializeField] public GameObject particleEffect2;
-    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public AudioSource audioSourceDungeon;
+    [SerializeField] public AudioSource audioSourceKnight;
     private bool isPlayerInRange;
     private Animator animator;
     private bool openChest;
@@ -30,14 +31,22 @@ public class ItemController : MonoBehaviour
 
     public void OpenChest()
     {
+        gameObject.layer = LayerMask.NameToLayer("Ground");
         animator.SetBool("open", true);
         buttonASprite.SetActive(false);
         openChest = true;
-        audioSource.Stop();
+        audioSourceDungeon.Stop();
         particleEffect1.SetActive(true);
         particleEffect2.SetActive(true);
         dialogScriptDungeon.isSecondDialogue = false;
         dialogScriptDungeon.isThirdDialogue = true;
+        StartCoroutine(Music());
+    }
+
+    private IEnumerator Music()
+    {
+        yield return new WaitForSeconds(4f);
+        audioSourceKnight.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

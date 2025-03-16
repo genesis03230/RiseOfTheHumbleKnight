@@ -8,6 +8,7 @@ public class LightingEffect : MonoBehaviour
     private TextMeshProUGUI textMesh;
     private Material textMaterial;
     private float time;
+    private string gamepadButton = "joystick button 0";
 
     private const string BevelWidthProperty = "_BevelWidth"; // Nombre exacto de la propiedad en el shader
 
@@ -31,7 +32,7 @@ public class LightingEffect : MonoBehaviour
         }
 
         // Detectar ENTER para cambiar de escena
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(gamepadButton))
         {
             LoadNextScene();
         }

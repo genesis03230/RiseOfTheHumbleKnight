@@ -57,7 +57,7 @@ Material:
     - _ColorMask: 15
     - _CullMode: 0
     - _Diffuse: 0.5
-    - _FaceDilate: 1
+    - _FaceDilate: 0.614
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0.05
@@ -74,9 +74,9 @@ Material:
     - _OutlineWidth: 1
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 0.39183673
-    - _ScaleRatioB: 0
-    - _ScaleRatioC: 0
+    - _ScaleRatioA: 0.47579396
+    - _ScaleRatioB: 0.17014286
+    - _ScaleRatioC: 0.12659438
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -89,9 +89,9 @@ Material:
     - _StencilWriteMask: 255
     - _TextureHeight: 1024
     - _TextureWidth: 1024
-    - _UnderlayDilate: 1
-    - _UnderlayOffsetX: -0.344
-    - _UnderlayOffsetY: -0.315
+    - _UnderlayDilate: 0.896
+    - _UnderlayOffsetX: -0.448
+    - _UnderlayOffsetY: -0.353
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
@@ -169,9 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: alagard SDF White
   m_EditorClassIdentifier: 
-  hashCode: 131252095
+  hashCode: 584666250
   material: {fileID: -7876873739085408288}
-  materialHashCode: -1953915265
+  materialHashCode: -1564507414
   m_Version: 1.1.0
   m_SourceFontFileGUID: 9a626f8abf695c448bc8a0ff0fd4144a
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 9a626f8abf695c448bc8a0ff0fd4144a, type: 3}

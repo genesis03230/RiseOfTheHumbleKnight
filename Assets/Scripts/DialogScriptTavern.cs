@@ -88,59 +88,59 @@ public class DialogScriptTavern : MonoBehaviour
     {
         var dialogTexts = new List<DialogData>();
 
-        dialogTexts.Add(new DialogData("/emote:Tavern/Hola, necesito tu ayuda... Dicen que sabes algo acerca de la bestia que ronda por estos lugares.", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Tavern//sound:Hi/Hola, necesito tu ayuda... Dicen que sabes algo acerca de la bestia que ronda por estos lugares.", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Serious/¿Ayudarte?", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Haa/¿Ayudarte?", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Normal/¿Y por qué debería?", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Normal//sound:Naaa/¿Y por qué debería?", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Happy/¡Ja! Primero invítame un trago, campesino. Quizá después te cuente algo... si estoy de humor.", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Happy//sound:Jajaja/Primero invítame un trago, campesino. Quizá después te cuente algo... si estoy de humor.", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Tavern/Esta bien, ire a buscarlo,", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Tavern//sound:Onmyway/Esta bien, ire a buscarlo,", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Normal//speed:down/. . . . . ."));
+        dialogTexts.Add(new DialogData("/emote:Normal//speed:down//sound:Barman/. . . . . ."));
 
-        dialogTexts.Add(new DialogData("/emote:Tavern/Aquí tienes tu trago. Ahora... ¿Me dirás algo?", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Tavern//sound:Onet/Aquí tienes tu trago. Ahora... ¿Me dirás algo?", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Normal/Bien, bien... La bestia vive en el camino hacia las montañas.", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Normal//sound:Mmm/Bien, bien... La bestia vive en el camino hacia las montañas.", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Serious/Nadie en su sano juicio se atreve a ir allí. ¿Por qué quieres saber sobre la bestia?", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Grunting/Nadie en su sano juicio se atreve a ir allí. /emote:Normal//sound:Haa/¿Por qué quieres saber sobre la bestia?", "NpcBanditDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Tavern/Tiene cautiva a mi amada... Voy a enfrentarla.", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Happy/¡Ja! Estás loco.", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Happy//sound:Jajaja/¡Ja! Estás loco.", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Normal/Además, ni siquiera llevas armadura ni espada. La bestia te hará pedazos.", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Grunting2/Además, ni siquiera llevas armadura ni espada. /emote:Normal//sound:Grunting/La bestia te hará pedazos.", "NpcBanditDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Happy/Aunque... si de verdad tienes tantas ganas de morir, quizá pueda ayudarte.", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Normal/Conozco a alguien. Un mago excéntrico que vive en las mazmorras, más allá del bosque.", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Normal//sound:Mmm/Conozco a alguien. Un mago excéntrico que vive en las mazmorras, más allá del bosque.", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Tavern/¿Y ese mago cómo podría ayudarme?", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Tavern//sound:What/¿Y ese mago cómo podría ayudarme?", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Serious/Se dice que tiene un orbe misterioso que otorga un poder inigualable a quien lo posee.", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Grunting/Se dice que tiene un orbe misterioso que otorga un poder inigualable a quien lo posee.", "NpcBanditDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Happy/Pero nadie ha regresado tras enfrentarse a sus pruebas... Quizá tú seas el primero.", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Tavern/Estoy dispuesto a correr el riesgo. Gracias por tu ayuda.", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Tavern/Estoy dispuesto a correr el riesgo. /sound:Great/Gracias por tu ayuda.", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Surprised/ESPERA!!!", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised//sound:Hey/ESPERA!!!", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Serious/Si quieres llegar rápido a las mazmorras, conozco un camino secreto.", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Grunting2/Si quieres llegar rápido a las mazmorras, /emote:Normal//sound:Grunting/conozco un camino secreto.", "NpcBanditDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Happy/Sigue las escaleras detrás de mí. Llegarás mucho antes.", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Tavern/Has sido de gran ayuda. Por cierto, ¿cómo te llamas?", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Tavern//sound:Okey/Has sido de gran ayuda. Por cierto, ¿cómo te llamas?", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Serious/Me llaman el bandido de las colinas, pero muchos me conocen como...", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Serious//sound:Grunting2/Me llaman el bandido de las colinas, pero muchos me conocen como...", "NpcBanditDialogue"));
 
         dialogTexts.Add(new DialogData("/emote:Happy//color:green/\"KAUFMAN\"", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Tavern/Hasta luego, Kaufman.", "PlayerDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Tavern//sound:Bye/Hasta luego, Kaufman.", "PlayerDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Happy/¡Suerte en tu travesía, loco valiente!", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Happy//sound:Adios/¡Suerte en tu travesía, loco valiente!", "NpcBanditDialogue"));
 
-        dialogTexts.Add(new DialogData("/emote:Surprised/HA HA HA!", "NpcBanditDialogue"));
+        dialogTexts.Add(new DialogData("/emote:Surprised//sound:Jajaja/HA HA HA!", "NpcBanditDialogue"));
 
         dialogManager.Show(dialogTexts);
 

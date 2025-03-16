@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
+    public static PlayerController playerController;
+
     private bool isPlayerInRange;
     public GameObject gameObjectCanvas;
     public GameObject miniGame;
@@ -14,6 +16,7 @@ public class Trigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerController.isMiniGameActive = true;
             isPlayerInRange = true;
             gameObjectCanvas.SetActive(true);
             simonsSaysGame = miniGame.GetComponent<SimonSaysGame>();

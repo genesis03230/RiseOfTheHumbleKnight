@@ -18,6 +18,7 @@ public class CanvasController : MonoBehaviour
 
     private int currentImageIndex = 0;
     public float waitAfterText = 2f; // Tiempo de espera después de mostrar cada texto
+    public FadeController fadeController; // Referencia al FadeController
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class CanvasController : MonoBehaviour
 
         // Después de mostrar todas las imágenes, espera un tiempo y carga la siguiente escena
         yield return new WaitForSeconds(waitAfterText); // Esperar después de la última imagen
+        yield return StartCoroutine(fadeController.FadeOut()); // Ejecutar el fade out
         SceneManager.LoadScene(nextSceneName);
     }
 
