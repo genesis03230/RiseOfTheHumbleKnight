@@ -1,59 +1,142 @@
-# Rise of the Humble Knight
+# 🛡️ Rise of the Humble Knight  
 
-## 🎮 Sobre el Juego
-*Rise of the Humble Knight* es un **RPG 2D en Pixel Art** desarrollado en menos de una semana como parte de una prueba técnica. Con un estilo retro y una historia cautivadora, el juego combina exploración, combate por turnos y narración interactiva para sumergir al jugador en la aventura de un simple campesino convertido en héroe.
-
-## 🏹 Historia
-El **Dragón Negro de las Montañas** ha secuestrado a la amada de un humilde campesino. Sin experiencia, sin armaduras y con solo su determinación, nuestro protagonista deberá recorrer distintos escenarios, reunir información y enfrentar desafíos hasta llegar a la mazmorra para la batalla final.
-
-## ✨ Características Principales
-✅ **Input System:** Controles optimizados y adaptables para una mejor experiencia de juego.  
-✅ **NPCs y diálogos dinámicos:** Interactúa con personajes en la aldea y la taberna usando un sistema de diálogos mejorado con retratos y expresiones animadas.  
-✅ **Inteligencia Artificial para imágenes:** Imágenes procesadas con IA para convertir fotos en Pixel Art, incluyendo NPCs basados en personas reales.  
-✅ **Pixel Art y assets personalizados:** Uso de assets de *itch.io* combinados con escenarios construidos desde cero.  
-✅ **Sistema de combate por turnos:** Basado en un sistema externo, modificado y optimizado para una experiencia de batalla fluida.  
-✅ **Mini-juego estilo *Simón Dice*:** Un reto dentro de la mazmorra antes del enfrentamiento final.  
-✅ **Animaciones, sonidos y música 8-bit retro:** Experiencia audiovisual envolvente con música épica sincronizada con la historia.  
-✅ **Transiciones animadas:** Uso de efectos de texto e imágenes para contar la historia de manera cinematográfica.  
-✅ **Sistema SPUM para personajes:** Creación rápida y efectiva de personajes y NPCs.  
-✅ **Escena post-créditos con final abierto:** Un giro inesperado al final de la historia con sincronización musical perfecta.  
-✅ **Créditos detallados:** Mención y agradecimiento a todos los recursos y herramientas utilizadas.  
-
-## 🌍 Escenarios
-1️⃣ **Aldea:** Lugar de origen del protagonista, donde interactúa con NPCs y recopila información.  
-2️⃣ **Taberna:** Un punto clave donde se pueden obtener pistas importantes.  
-3️⃣ **Mazmorra:** Contiene un mini-juego antes de llegar al dragón.  
-4️⃣ **Batalla final:** Enfrentamiento épico con el Dragón Negro en un combate por turnos con animaciones y sonidos envolventes.  
-
-## 🚀 Estado del Proyecto
-Actualmente, *Rise of the Humble Knight* es un **proyecto completo y jugable**, desarrollado en tiempo récord. Se pueden realizar mejoras en pulido visual, optimización de mecánicas y balance de combate en futuras versiones.
-
-## 🛠️ Tecnologías y Herramientas Usadas
-- **Motor Gráfico:** Unity (2D)
-- **Lenguaje de Programación:** C#
-- **Sistema de Input:** Unity Input System
-- **Creación de NPCs:** SPUM
-- **Diálogos:** Sistema externo adaptado
-- **Combate por turnos:** Sistema externo modificado
-- **Música y Sonido:** Composición en 8-bit retro
-- **Pixel Art e Ilustraciones:** Imágenes procesadas con IA y assets de itch.io
+![Rise of the Humble Knight Portada](https://github.com/user-attachments/assets/1bb981a6-dc01-4cf9-b64c-f7e1b68fa5da)
 
 ---
 
-## 📥 Instalación y Ejecución
-🚧 **(Se agregará información cuando el juego esté disponible para descarga)** 🚧
+## 🎮 Overview  
+**Rise of the Humble Knight** is a **2D Pixel Art RPG** developed in under one week as part of a **technical test for Team Brunomir**.  
+Built entirely solo in Unity, the game combines **exploration, interactive dialogue systems, turn-based combat**, and **cinematic storytelling**, offering a full narrative and gameplay experience from start to finish.  
 
-## 📷 Capturas y Gameplay
-🚧 **(Se agregarán imágenes y GIFs próximamente)** 🚧
-
-## 🙌 Créditos y Agradecimientos
-- A los amigos que enviaron sus imágenes para ser convertidas en Pixel Art.
-- A los creadores de assets en *itch.io* utilizados en los entornos.
-- A la comunidad de desarrollo indie por la inspiración y soporte.
+Despite being my **first 2D Unity project**, the prototype achieved a complete, playable game featuring multiple environments, progression, and narrative sequences — all within an incredibly short timeframe.  
 
 ---
 
-📌 **Este README será actualizado con enlaces de descarga, imágenes y videos en futuras versiones.**
+## ⚔️ Project Context  
+This project was part of an entry challenge for **Team Brunomir**, an indie studio seeking developers specialized in RPG systems and dialogue implementation.  
+While the original task required only a dialogue prototype and a mini-game, I expanded the scope to create a **fully playable RPG prototype**, complete with combat and narrative flow.  
 
-🎮 ¡Prepárate para la aventura de *Rise of the Humble Knight*!
+The project led me to be **shortlisted among the top two candidates** out of hundreds of applicants.  
+Although another developer was ultimately selected, this experience showcased my ability to **design, prototype, and deliver complete systems independently**.  
 
+---
+
+## 🧩 Development Timeline  
+
+| Date | Milestone |
+|------|------------|
+| **Feb 9** | Initial commit: integrated DDialogue, SPUM, and Unity Input System; set up player controller and animations. |
+| **Feb 10** | Implemented dialogue logic, NPC AI patrols, and mini-game mechanics. |
+| **Feb 11** | Level design and playable environments built. |
+| **Feb 12** | Added menus, cutscenes, dungeon, TextMeshPro, and interactive sequences. |
+| **Feb 24** | Shortlisted among the top two candidates. |
+| **Mar 15** | Version 1.0.0: combat system, post-credits sequence, improved visuals, stable build. |
+
+---
+
+## 🧠 Core Features  
+- **Dialogue System (DDialogue by DoublSB):** Customized for cinematic conversations.  
+- **SPUM Character Creator:** Used for quick prototyping of animated pixel characters.  
+- **Turn-Based Combat System:** Fully implemented and balanced for the final version.  
+- **AI-Assisted Art Pipeline:** ChatGPT, Dream by Wombo, and PixelMe used for rapid visual creation.  
+- **Custom Mini-Game (Simon Says style):** Integrated before the final boss battle.  
+- **Post-Credits Cinematic Scene:** Story-driven ending with perfect music sync.  
+- **Three Complete Environments:** Village, Tavern, and Dungeon.  
+- **Original 8-bit Soundtrack:** Inspired by classic retro RPGs.  
+- **Fully Playable Prototype:** Complete pacing, transitions, and immersive world design.  
+
+---
+
+## 🏰 Environments  
+
+### Village  
+![Village Screenshot](#)  
+*The starting area where the player interacts with NPCs and gathers information to begin the quest.*
+
+---
+
+### Tavern  
+![Tavern Screenshot](#)  
+*A narrative hub where the player uncovers key story elements and prepares for the dungeon journey.*
+
+---
+
+### Dungeon  
+![Dungeon Screenshot](#)  
+*An atmospheric level featuring the mini-game challenge and final boss encounter.*
+
+---
+
+## 🕹️ Gameplay Elements  
+
+### Mini-Game (Simon Says)  
+![Mini-Game Screenshot](#)  
+*A short reflex-based puzzle the player must complete before facing the Black Dragon.*
+
+---
+
+### Combat System  
+![Combat Screenshot – UI and Turn-Based Actions](#)  
+*The turn-based battle system allows players to select attacks, defend, or use special actions through a clean custom UI.*
+
+---
+
+## 🎬 Narrative Transitions & Storytelling  
+
+![Cinematic Story Sequence – Example 1](#)  
+![Cinematic Story Sequence – Example 2](#)  
+*Between each level, cinematic text-and-image sequences reveal the hero’s transformation and emotional journey.*
+
+---
+
+## 🧱 Credits & Branding  
+
+![Credits / End Scene Screenshot](#)  
+ ![Little Lion y Unity](https://github.com/user-attachments/assets/bc11d687-b8fa-445c-8e90-1cef9560c999)
+*End credits and brand sequence, featuring full attribution of assets and contributors.*
+
+---
+
+## 🛠️ Tools & Technologies  
+- **Engine:** Unity 2D  
+- **Language:** C#  
+- **Dialogue Framework:** DDialogue (customized)  
+- **Character Creation:** SPUM  
+- **Input:** Unity Input System  
+- **Music & Sound:** Original 8-bit compositions by Jonatan Huens  
+- **Art Tools:** PixelMe, AI (Wombo, AIEase), and assets from *Itch.io*  
+- **Level Design:** Custom tilemaps and handcrafted environments  
+
+---
+
+## 🎥 Media  
+
+### Trailer  
+📺 [Watch on YouTube – Rise of the Humble Knight (Trailer)](https://www.youtube.com/watch?v=--9LkrKx0eg)
+
+---
+
+## 🎨 Credits  
+
+**Game Design & Direction:** Jonatan Huens  
+**Programming / UI / Tools / Level Design:** Jonatan Huens  
+**2D Art & Assets:** Mattz Art, Anokolisa, Itch.io  
+**Dialogue System:** DDialogue System by DoublSB (modified)  
+**Animation System:** SPUM by Soonsoon & Hoho  
+**Sound:** Dillon Becker, Leohpaz  
+**AI Generation:** ChatGPT, Dream by Wombo, AIEase  
+**Music Editing:** Jonatan Huens (8-bit adaptation of *Lufia and the Fortress of Doom*)  
+
+Special thanks to **Lucas Marquez Kaufman** and **Mauricio Montenegro** for their participation as pixel-art characters with emotional expressions.
+
+---
+
+## 🌟 Outcome  
+This project demonstrated my ability to **deliver a complete solo game prototype**, covering programming, design, narrative, and art direction.  
+It became a cornerstone project validating my **technical expertise, creative vision, and ability to produce under tight deadlines**.
+
+---
+
+### 📜 “Even the humblest knight can rise when purpose meets passion.”
+
+---
