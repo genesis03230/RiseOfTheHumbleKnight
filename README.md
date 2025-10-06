@@ -1,4 +1,4 @@
-# 🛡️ Rise of the Humble Knight  
+# Rise of the Humble Knight  
 
 ![Rise of the Humble Knight Portada](https://github.com/user-attachments/assets/1bb981a6-dc01-4cf9-b64c-f7e1b68fa5da)
 
