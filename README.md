@@ -50,19 +50,19 @@ Although another developer was ultimately selected, this experience showcased my
 ## 🏰 Environments  
 
 ### Village  
-![Village Screenshot](#)  
+<img width="1920" height="1080" alt="Village" src="https://github.com/user-attachments/assets/e588aeb0-6996-433c-997f-0eaf0b834d22" />
 *The starting area where the player interacts with NPCs and gathers information to begin the quest.*
 
 ---
 
 ### Tavern  
-![Tavern Screenshot](#)  
+<img width="1920" height="1080" alt="Tavern" src="https://github.com/user-attachments/assets/29fcffa1-a3ab-4690-90df-988956320c8c" />
 *A narrative hub where the player uncovers key story elements and prepares for the dungeon journey.*
 
 ---
 
 ### Dungeon  
-![Dungeon Screenshot](#)  
+<img width="1920" height="1080" alt="Dungeon" src="https://github.com/user-attachments/assets/6db18b76-2b17-4f92-8562-566855f8fae4" />
 *An atmospheric level featuring the mini-game challenge and final boss encounter.*
 
 ---
@@ -70,28 +70,29 @@ Although another developer was ultimately selected, this experience showcased my
 ## 🕹️ Gameplay Elements  
 
 ### Mini-Game (Simon Says)  
-![Mini-Game Screenshot](#)  
+<img width="1920" height="1080" alt="Puzzle Simon Says" src="https://github.com/user-attachments/assets/37272678-fd80-4a7c-af55-2e45a3908db2" />
 *A short reflex-based puzzle the player must complete before facing the Black Dragon.*
 
 ---
 
 ### Combat System  
-![Combat Screenshot – UI and Turn-Based Actions](#)  
+<img width="1920" height="1080" alt="Combat System" src="https://github.com/user-attachments/assets/5cb7ee3b-d448-478a-95fd-0010060ab999" />
 *The turn-based battle system allows players to select attacks, defend, or use special actions through a clean custom UI.*
 
 ---
 
 ## 🎬 Narrative Transitions & Storytelling  
-
-![Cinematic Story Sequence – Example 1](#)  
-![Cinematic Story Sequence – Example 2](#)  
+<img width="1920" height="1080" alt="Story 1" src="https://github.com/user-attachments/assets/2432e60b-f334-44cb-b970-6543d281427b" />
+<br><br>
+<img width="1920" height="1080" alt="Story 2" src="https://github.com/user-attachments/assets/75a2bbee-7cac-4948-8359-ef1748eb1a51" />
 *Between each level, cinematic text-and-image sequences reveal the hero’s transformation and emotional journey.*
 
 ---
 
 ## 🧱 Credits & Branding  
+  <img width="1920" height="1080" alt="Credits" src="https://github.com/user-attachments/assets/28ce3f7c-fb70-402e-abd0-7811a1b75f2c" />
+<br><br>
 
-![Credits / End Scene Screenshot](#)  
  ![Little Lion y Unity](https://github.com/user-attachments/assets/bc11d687-b8fa-445c-8e90-1cef9560c999)
 *End credits and brand sequence, featuring full attribution of assets and contributors.*
 
